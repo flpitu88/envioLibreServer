@@ -10,6 +10,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import model.Usuario;
@@ -35,4 +36,10 @@ public class UsuarioResource {
         return usuarioSrv.getTodosLosUsuarios();
     }
 
+    @GET
+    @Path("{id}")
+    @Produces("application/json")
+    public Usuario getUsuarioById(@PathParam("id") String idUser) {
+        return usuarioSrv.getUsuarioById(Integer.parseInt(idUser));
+    }
 }

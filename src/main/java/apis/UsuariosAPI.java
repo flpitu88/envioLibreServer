@@ -16,6 +16,6 @@ public interface UsuariosAPI {
 
     public List<Usuario> getTodosLosUsuarios();
     
-    
+    public Usuario getUsuarioById(int id);
 
 }

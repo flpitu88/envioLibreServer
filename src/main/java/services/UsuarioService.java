@@ -27,4 +27,9 @@ public class UsuarioService implements UsuariosAPI {
         return usDao.getTodosLosUsuarios();
     }
 
+    @Override
+    public Usuario getUsuarioById(int id) {
+        return usDao.getUsuarioById(id);
+    }
+
 }

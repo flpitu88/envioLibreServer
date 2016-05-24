@@ -20,4 +20,6 @@ public interface UsuarioDAO {
     
     public List<Usuario> getTodosLosUsuarios();
     
+    public Usuario getUsuarioById(int id);
+    
 }

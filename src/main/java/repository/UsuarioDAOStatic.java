@@ -6,6 +6,8 @@
 package repository;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import model.Usuario;
 import org.springframework.stereotype.Repository;
@@ -22,7 +24,10 @@ public class UsuarioDAOStatic implements UsuarioDAO {
     public UsuarioDAOStatic() {
 
         listado = new ArrayList<>();
-        Usuario us1 = new Usuario("Flavio", "Pietrolati");
+        Date fechaNac = new Date(1988, 1, 1);
+        Usuario us1 = new Usuario(2, "Flavio", "Pietrolati",
+                "flavio", "flpitu88", "flpitu88@hotmail.com",
+                fechaNac, "Buenos Aires", "JLS", "San Martin");
         listado.add(us1);
     }
 
@@ -39,6 +44,19 @@ public class UsuarioDAOStatic implements UsuarioDAO {
     @Override
     public List<Usuario> getTodosLosUsuarios() {
         return listado;
+    }
+
+    @Override
+    public Usuario getUsuarioById(int id) {
+        Usuario user = null;
+        Iterator<Usuario> iterator = listado.iterator();
+        while (iterator.hasNext()) {
+            Usuario next = iterator.next();
+            if (next.getId() == id) {
+                user = next;
+            }
+        }
+        return user;
     }
 
 }
