@@ -32,4 +32,11 @@ public class UsuarioService implements UsuariosAPI {
         return usDao.getUsuarioById(id);
     }
 
+    @Override
+    public void guardarUsuario(Usuario us) {
+        usDao.guardarUsuario(us);
+    }
+    
+    
+
 }
