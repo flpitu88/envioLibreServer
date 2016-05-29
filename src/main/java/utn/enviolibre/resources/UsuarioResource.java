@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package resources;
+package utn.enviolibre.resources;
 
-import apis.UsuariosAPI;
+import utn.enviolibre.apis.UsuariosAPI;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -16,12 +16,14 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import model.Usuario;
+import org.springframework.stereotype.Component;
+import utn.enviolibre.model.Usuario;
 
 /**
  *
  * @author flpitu88
  */
+@Component
 @Path("/usuarios")
 @Produces(MediaType.APPLICATION_JSON)
 public class UsuarioResource {

@@ -3,23 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package repository;
+package utn.enviolibre.apis;
 
 import java.util.List;
-import model.Usuario;
+import utn.enviolibre.model.Usuario;
 
 /**
  *
  * @author flpitu88
  */
-public interface UsuarioDAO {
-    
-    public void guardarUsuario(Usuario u);
-    
-    public Usuario getUsuarioByNombre(String nombre);
-    
+public interface UsuariosAPI {
+
     public List<Usuario> getTodosLosUsuarios();
     
     public Usuario getUsuarioById(int id);
     
+    public void guardarUsuario(Usuario us);
+
 }

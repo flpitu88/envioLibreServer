@@ -3,14 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package utn.enviolibre.model;
 
 import java.util.Date;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author flpitu88
  */
+//@Entity
+//@Table(name = "Usuario")
 public class Usuario {
 
     private int id;
@@ -23,6 +34,7 @@ public class Usuario {
     private String provincia;
     private String localidad;
     private String ciudad;
+    private TarjetaCredito tarjeta;
 
     public Usuario() {
     }
@@ -32,7 +44,9 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public Usuario(int id, String nombre, String apellido, String clave, String nombreUsuario, String email, Date fechaNac, String provincia, String localidad, String ciudad) {
+    public Usuario(int id, String nombre, String apellido, String clave,
+            String nombreUsuario, String email, Date fechaNac, String provincia,
+            String localidad, String ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -45,6 +59,18 @@ public class Usuario {
         this.ciudad = ciudad;
     }
 
+//    @OneToOne(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.ALL)
+    public TarjetaCredito getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(TarjetaCredito tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
+//    @Id
+//    @Column(name = "id")
+//    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -53,6 +79,7 @@ public class Usuario {
         this.id = id;
     }
 
+//    @Column(name = "clave")
     public String getClave() {
         return clave;
     }
@@ -61,6 +88,7 @@ public class Usuario {
         this.clave = clave;
     }
 
+//    @Column(name = "nombreUsuario")
     public String getNombreUsuario() {
         return nombreUsuario;
     }
@@ -69,6 +97,7 @@ public class Usuario {
         this.nombreUsuario = nombreUsuario;
     }
 
+//    @Column(name = "email")
     public String getEmail() {
         return email;
     }
@@ -77,6 +106,8 @@ public class Usuario {
         this.email = email;
     }
 
+//    @Column(name = "fechaNac")
+//    @Temporal(javax.persistence.TemporalType.DATE)
     public Date getFechaNac() {
         return fechaNac;
     }
@@ -85,6 +116,7 @@ public class Usuario {
         this.fechaNac = fechaNac;
     }
 
+//    @Column(name = "provincia")
     public String getProvincia() {
         return provincia;
     }
@@ -93,6 +125,7 @@ public class Usuario {
         this.provincia = provincia;
     }
 
+//    @Column(name = "localidad")
     public String getLocalidad() {
         return localidad;
     }
@@ -101,6 +134,7 @@ public class Usuario {
         this.localidad = localidad;
     }
 
+//    @Column(name = "ciudad")
     public String getCiudad() {
         return ciudad;
     }
@@ -109,6 +143,7 @@ public class Usuario {
         this.ciudad = ciudad;
     }
 
+//    @Column(name = "nombre")
     public String getNombre() {
         return nombre;
     }
@@ -117,6 +152,7 @@ public class Usuario {
         this.nombre = nombre;
     }
 
+//    @Column(name = "apellido")
     public String getApellido() {
         return apellido;
     }

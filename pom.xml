@@ -151,6 +151,14 @@
             <version>7.0</version>
             <type>jar</type>
         </dependency>
+        
+        <!--Hibernate-->
+        <dependency>
+            <groupId>hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>3.4.0.GA</version>
+            <type>pom</type>
+        </dependency>
     </dependencies>
 
     <build>

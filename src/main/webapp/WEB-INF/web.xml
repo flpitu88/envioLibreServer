@@ -11,7 +11,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            config.SpringConfig
+            utn.enviolibre.config.SpringConfig
         </param-value>
     </context-param>
     
@@ -29,7 +29,7 @@
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
             <param-value>
-                config.JerseyConfig
+                utn.enviolibre.config.JerseyConfig
             </param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>

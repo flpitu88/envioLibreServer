@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package services;
+package utn.enviolibre.services;
 
-import apis.UsuariosAPI;
+import utn.enviolibre.apis.UsuariosAPI;
 import java.util.List;
-import model.Usuario;
+import utn.enviolibre.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.UsuarioDAO;
+import utn.enviolibre.repository.UsuarioDAO;
 
 /**
  *
