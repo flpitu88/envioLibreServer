@@ -1,27 +1,33 @@
-/*
+/**
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utn.enviolibre.repositoriosconDB;
+package utn.enviolibre.repository;
 
 import java.util.List;
-import utn.enviolibre.model.TarjetaCredito;
+import javax.transaction.Transactional;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import utn.enviolibre.model.TarjetaCredito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import utn.enviolibre.repository.TarjetaCreditoDAO;
 
 /**
  *
  * @author flpitu88
  */
 @Repository
+@Transactional
 public class TarjetaCreditoDAODB implements TarjetaCreditoDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
+    
+    protected Session getCurrentSession(){
+      return sessionFactory.getCurrentSession();
+   }
 
     @Override
     public TarjetaCredito getTarjetaById(int id) {

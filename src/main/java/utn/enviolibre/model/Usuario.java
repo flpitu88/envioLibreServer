@@ -20,8 +20,8 @@ import javax.persistence.Temporal;
  *
  * @author flpitu88
  */
-//@Entity
-//@Table(name = "Usuario")
+@Entity
+@Table(name = "Usuario")
 public class Usuario {
 
     private int id;
@@ -34,7 +34,7 @@ public class Usuario {
     private String provincia;
     private String localidad;
     private String ciudad;
-    private TarjetaCredito tarjeta;
+//    private TarjetaCredito tarjeta;
 
     public Usuario() {
     }
@@ -60,17 +60,17 @@ public class Usuario {
     }
 
 //    @OneToOne(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.ALL)
-    public TarjetaCredito getTarjeta() {
-        return tarjeta;
-    }
+//    public TarjetaCredito getTarjeta() {
+//        return tarjeta;
+//    }
+//
+//    public void setTarjeta(TarjetaCredito tarjeta) {
+//        this.tarjeta = tarjeta;
+//    }
 
-    public void setTarjeta(TarjetaCredito tarjeta) {
-        this.tarjeta = tarjeta;
-    }
-
-//    @Id
-//    @Column(name = "id")
-//    @GeneratedValue
+    @Id
+    @Column(name = "id")
+    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -79,7 +79,7 @@ public class Usuario {
         this.id = id;
     }
 
-//    @Column(name = "clave")
+    @Column(name = "clave")
     public String getClave() {
         return clave;
     }
@@ -88,7 +88,7 @@ public class Usuario {
         this.clave = clave;
     }
 
-//    @Column(name = "nombreUsuario")
+    @Column(name = "nombreUsuario")
     public String getNombreUsuario() {
         return nombreUsuario;
     }
@@ -97,7 +97,7 @@ public class Usuario {
         this.nombreUsuario = nombreUsuario;
     }
 
-//    @Column(name = "email")
+    @Column(name = "email")
     public String getEmail() {
         return email;
     }
@@ -106,8 +106,8 @@ public class Usuario {
         this.email = email;
     }
 
-//    @Column(name = "fechaNac")
-//    @Temporal(javax.persistence.TemporalType.DATE)
+    @Column(name = "fechaNac")
+    @Temporal(javax.persistence.TemporalType.DATE)
     public Date getFechaNac() {
         return fechaNac;
     }
@@ -116,7 +116,7 @@ public class Usuario {
         this.fechaNac = fechaNac;
     }
 
-//    @Column(name = "provincia")
+    @Column(name = "provincia")
     public String getProvincia() {
         return provincia;
     }
@@ -125,7 +125,7 @@ public class Usuario {
         this.provincia = provincia;
     }
 
-//    @Column(name = "localidad")
+    @Column(name = "localidad")
     public String getLocalidad() {
         return localidad;
     }
@@ -134,7 +134,7 @@ public class Usuario {
         this.localidad = localidad;
     }
 
-//    @Column(name = "ciudad")
+    @Column(name = "ciudad")
     public String getCiudad() {
         return ciudad;
     }
@@ -143,7 +143,7 @@ public class Usuario {
         this.ciudad = ciudad;
     }
 
-//    @Column(name = "nombre")
+    @Column(name = "nombre")
     public String getNombre() {
         return nombre;
     }
@@ -152,7 +152,7 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-//    @Column(name = "apellido")
+    @Column(name = "apellido")
     public String getApellido() {
         return apellido;
     }

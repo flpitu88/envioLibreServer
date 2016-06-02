@@ -5,7 +5,6 @@
  */
 package utn.enviolibre.model;
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,8 +18,8 @@ import javax.persistence.Table;
  *
  * @author flpitu88
  */
-//@Entity
-//@Table(name = "TarjetaCredito")
+@Entity
+@Table(name = "TarjetaCredito")
 public class TarjetaCredito {
 
     private int id;
@@ -43,9 +42,9 @@ public class TarjetaCredito {
 //        this.usuario = usuario;
     }
 
-//    @Id
-//    @Column(name = "idTarjetaCredito")
-//    @GeneratedValue
+    @Id
+    @Column(name = "idTarjetaCredito")
+    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -59,12 +58,12 @@ public class TarjetaCredito {
 //    public Usuario getUsuario() {
 //        return usuario;
 //    }
-
+//
 //    public void setUsuario(Usuario usuario) {
 //        this.usuario = usuario;
 //    }
 
-//    @Column(name = "entidad")
+    @Column(name = "entidad")
     public String getEntidad() {
         return entidad;
     }
@@ -73,7 +72,7 @@ public class TarjetaCredito {
         this.entidad = entidad;
     }
 
-//    @Column(name = "token")
+    @Column(name = "token")
     public String getTokenMP() {
         return tokenMP;
     }

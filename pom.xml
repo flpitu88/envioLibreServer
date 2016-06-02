@@ -9,11 +9,12 @@
     <artifactId>envioLibreServer</artifactId>
 
     <properties>
-        <appengine.app.version>1</appengine.app.version>
+        <!--<appengine.app.version>1</appengine.app.version>-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.0.6.RELEASE</spring.version>
+        <spring.version>4.2.4.RELEASE</spring.version>
         <jersey.version>2.11</jersey.version>
         <jackson.version>2.4.4</jackson.version>
+        <hibernate.version>4.3.11.Final</hibernate.version>
     </properties>
     
     <prerequisites>
@@ -57,7 +58,11 @@
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
- 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.32</version>
+        </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
@@ -146,6 +151,18 @@
             <type>jar</type>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>4.2.0.RELEASE</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>4.1.4.RELEASE</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -154,10 +171,28 @@
         
         <!--Hibernate-->
         <dependency>
-            <groupId>hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>3.4.0.GA</version>
-            <type>pom</type>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <!--to enable Hibernate to use its proxy model, we need javassist as well-->
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.18.2-GA</version>
+        </dependency>
+        <!--we’re going to use MySQL, we’ll also need:-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!--we are using a proper connection pool instead of the dev-only Spring implementation – the DriverManagerDataSource. We’re using here the Tomcat JDBC Connection Pool:-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>9.0.0.M6</version>
         </dependency>
     </dependencies>
 

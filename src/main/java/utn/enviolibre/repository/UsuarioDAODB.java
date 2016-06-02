@@ -3,25 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utn.enviolibre.repositoriosconDB;
+package utn.enviolibre.repository;
 
 import java.util.List;
+import javax.transaction.Transactional;
+import org.hibernate.Session;
 import utn.enviolibre.model.Usuario;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import utn.enviolibre.repository.UsuarioDAO;
 
 /**
  *
  * @author flpitu88
  */
 @Repository
+@Transactional
 public class UsuarioDAODB implements UsuarioDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
+
+    protected Session getCurrentSession() {
+        return sessionFactory.getCurrentSession();
+    }
 
     @Override
     public void guardarUsuario(Usuario u) {
